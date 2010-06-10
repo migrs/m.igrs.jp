@@ -1,1 +1,22 @@
-migrs.github.com
+---
+layout: default
+title: m.igrs.jp
+---
+<h1><a href="http://m.igrs.jp/">{{ page.title }}</a></h1>
+<div id="aboutme">
+  <h2>Masato Igarashi</h2>
+  <ul>
+    <li><a href="http://migrs.blogspot.com/">http://migrs.blogspot.com/</a></li>
+    <li><a href="http://twitter.com/migrs">http://twitter.com/migrs</a></li>
+    <li><a href="http://facebook.com/migrs">http://facebook.com/migrs</a></li>
+    <li><a href="http://www.linkedin.com/in/migrs">http://www.linkedin.com/in/migrs</a></li>
+  </ul>
+</div>
+<div class="posts">
+  <h2>Posts</h2>
+  <ul>
+  {% for post in site.posts limit:3 %}
+  <li><span>{{ post.date | date_to_string }}</span>&nbsp;&raquo;&nbsp;<a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+  </ul>
+</div>
