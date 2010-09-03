@@ -6,6 +6,7 @@ layout: default
   {{ content }}
   <hr />
   <span class="posted_at">Posted at {{ page.date | date_to_string }}</span>
+  <a href="{{site.url}}{{page.url}}">Permlink</a>
   <br />
   <a href="/">Back</a>
 </div>
