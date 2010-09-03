@@ -6,16 +6,15 @@ layout: default
   <h1>{{ page.title }}</h1>
   {{ content }}
 
-  <div id="disqus_thread"></div>
-  <hr />
-  <span class="posted_at">Posted at {{ page.date | date_to_string }}</span>
-  <a href="{{site.url}}{{page.url}}#disqus_thread">Comments</a>
-  <a href="{{site.url}}{{page.url}}">Permlink</a>
-  <br />
-  <a href="/">Back</a>
 </div>
-
-<script type="text/javascript">
+<div class="post-foot" style="font-size:small;text-align:right;">
+  <span class="posted_at">Posted at {{ page.date | date_to_string }}</span>
+  <a href="{{site.url}}{{page.url}}">Permlink</a>
+</div>
+<hr />
+<div class="comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
   /**
     * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
     */
@@ -24,14 +23,7 @@ layout: default
    dsq.src = 'http://migrs.disqus.com/embed.js';
    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=migrs">comments powered by Disqus.</a></noscript>
-<script type="text/javascript">
-
-var disqus_shortname = 'migrs';
-(function () {
-  var s = document.createElement('script'); s.async = true;
-  s.src = 'http://disqus.com/forums/migrs/count.js';
-  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());
-</script>
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=migrs">comments powered by Disqus.</a></noscript>
+</div>
+<p><a href="/">Back</a></p>
