@@ -2,6 +2,31 @@
 layout: default
 title: m.igrs.jp
 ---
+<script src='http://www.google.com/jsapi' type='text/javascript'></script>
+<script type='text/javascript'>
+  //<![CDATA[
+    google.load('visualization', '1', {'packages':['annotatedtimeline']});
+    google.setOnLoadCallback(drawVisualization);
+    
+    function drawVisualization() {
+      var query = new google.visualization.Query(
+        'https://spreadsheets.google.com/tq?key=0ApdONG9FX61OdEhOaU5kOGZidXh1UzNWOXkxUE9DaVE&range=A:B');
+      query.send(handleQueryResponse);
+    }
+    
+    function handleQueryResponse(response) {
+      if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+    
+      var data = response.getDataTable();
+      var annotatedtimeline = new google.visualization.AnnotatedTimeLine(
+          document.getElementById('weight_graph'));
+      annotatedtimeline.draw(data, {'displayAnnotations': true, 'scaleType': 'maximized'});
+    }
+  //]]>
+</script>
 <h1><a href="http://m.igrs.jp/">{{ page.title }}</a></h1>
 <div id="aboutme">
   <h2>Masato Igarashi</h2>
@@ -20,3 +45,5 @@ title: m.igrs.jp
   {% endfor %}
   </ul>
 </div>
+<h2>Weight Graph</h2>
+  <div id='weight_graph' style='width: 500px; height: 500px;'></div>
