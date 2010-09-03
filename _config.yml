@@ -6,3 +6,4 @@ pygments:    true
 #markdown:    maruku
 #permalink:   date
 exclude: [CNAME, README]
+title: "m.igrs.jp"
