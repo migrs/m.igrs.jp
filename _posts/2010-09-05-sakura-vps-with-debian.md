@@ -9,4 +9,5 @@ title: Sakura VPS with Debian
 - [さくらのVPSを Debian GNU/Linux にする](http://www.touki.info/howto/howtoSakuraDebian)
 - [iptables - Debian Wiki](http://wiki.debian.org/iptables)
 
+ということで早速このサイトも Debian になりました！  
 これは使える！！
