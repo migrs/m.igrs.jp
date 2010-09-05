@@ -1,8 +1,6 @@
-= 2010-09-05 Sakura VPS with Debian
-[2010-09-05 12:32] >>> ~/howm/2010/09/2010-09-05-115126.howm
 ---
 layout: post
-title: Sakura VPS
+title: Sakura VPS with Debian
 ---
 さくらのVPS で Debian がインストールできる(via [@yugui](http://twitter.com/yugui/status/22968240100))とのとこでさっそく試してみた。
 
