@@ -10,7 +10,3 @@ title: m.igrs.jp
 <li><span>{{ post.date | date_to_string }}</span>&raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
 {% endfor %}
 </ul>
-
-<div id="contacts">
-Masato Igarashi <a href="http://github.com/migrs">github</a> / <a href="http://twitter.com/migrs">twitter</a> / <a href="http://facebook.com/migrs">facebook</a> / <a href="http://www.linkedin.com/in/migrs">linkedin</a>
-</div>
