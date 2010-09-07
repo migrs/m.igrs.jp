@@ -8,7 +8,7 @@ layout: default
 
 </div>
 <div class="post-foot" style="font-size:small;text-align:right;">
-  <span class="posted_at">Posted at {{ page.date | date_to_string }}</span>
+  <span class="posted_at">Posted at {{ page.date | date:"%Y-%m-%d" }}</span>
   <a href="{{site.url}}{{page.url}}">Permlink</a>
   <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="migrs">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 </div>
