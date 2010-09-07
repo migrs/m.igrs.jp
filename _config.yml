@@ -7,4 +7,4 @@ pygments:    true
 #permalink:   date
 exclude: [CNAME, README, public]
 title: "m.igrs.jp"
-url: "http://m.igrs.jp"
+#url: "http://m.igrs.jp"
