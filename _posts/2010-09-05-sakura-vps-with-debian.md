@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Sakura VPS with Debian
+tags: server debian
 ---
 さくらのVPS で Debian がインストールできる(via [@yugui](http://twitter.com/yugui/status/22968240100))とのとこでさっそく試してみた。
 

@@ -1,0 +1,23 @@
+---
+layout: default
+title: m.igrs.jp
+---
+<h1><a href="http://m.igrs.jp/">{{ page.title }}</a></h1>
+<h2>Posts</h2>
+<ul class="posts">
+{% for post in site.posts limit:30 %}
+<li><span class="date">{{ post.date | date:"%Y-%m-%d" }}</span> <a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+
+<h2>Tags</h2>
+<div style="margin-left: 2em;">
+{% for tag in site.iterable.tags %}
+<a style="font-size: {{ tag.posts | size | times:1.5 | plus: 10 }}px;" href="{{site.baseurl}}/tags/{{tag.name}}">{{tag.name}}</a>{% if forloop.last == false %},&nbsp;{% endif %}
+{% endfor %}
+</div>
+
+<h2>Archives</h2>
+<div style="margin-left: 2em;">
+<a href="{{site.baseurl}}/2010/">2010</a>
+</div>

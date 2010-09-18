@@ -1,0 +1,16 @@
+---
+layout: page
+---
+<h1> <a href="{{site.baseurl}}/tags/">Tag</a>: {{ page.tag }} </h1>
+{% if page.related %}
+<div id="related">
+Related Tags: {% for tag in page.related %}<a href="/tags/{{tag}}/">{{ tag }}</a>{% if forloop.last == false %},&nbsp;{% endif %}{% endfor %}
+</div>
+{% endif %}
+<ul>
+{% for post in site.tags[page.tag] %}
+  <li> 
+    <a href="{{post.url}}">{{ post.title }}</a>
+  </li>
+{% endfor %}
+</ul>

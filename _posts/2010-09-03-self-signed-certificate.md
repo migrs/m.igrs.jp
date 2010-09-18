@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Self Signed Certificate
+tags: linux
 ---
 何度やっても忘れるのでメモ
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Sakura VPS
+tags: server
 ---
 [github pages](http://pages.github.com/) における独自ドメインでの運用は有料オプションとなり、最低毎月 $7 かかるのですが、その値段払うなら最近手頃になってきたVPSを借りられちゃうということで、[さくらのVPS](http://vps.sakura.ad.jp/)を試してみることにした。
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: jekyll ext
+tags: jekyll
 ---
 標準の[jekyll](http://github.com/mojombo/jekyll)ではシンプル過ぎるので[jekyll_ext](http://github.com/rfelix/jekyll_ext)を導入してみる。
 

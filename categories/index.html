@@ -1,0 +1,17 @@
+---
+layout: page
+title: Categories
+---
+<h1> Categories </h1>
+
+{% for category in site.iterable.categories %}
+
+<h2><span id="{{ category.name | replace:' ','_' | downcase }}">{{ category.name }}</span></h2>
+
+<ul>
+{% for post in topic.posts %}
+<li><a href="{{ site.baseurl }}{{post.url}}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+
+{% endfor %}
