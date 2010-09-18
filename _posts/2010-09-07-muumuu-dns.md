@@ -1,7 +1,7 @@
 ---
 layout: post
-title: muumuu dns
 tags: server
+title: muumuu dns
 ---
 EveryDNS では TXT Record がサポートされないことを知り、他の DNS Provider をいろいろ調べていたのだがたくさんあってどれも決定打が無い。
 

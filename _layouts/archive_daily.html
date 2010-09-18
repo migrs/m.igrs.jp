@@ -1,10 +1,7 @@
 ---
 layout: page
 ---
- 
 <h1><a href="../">{{ page.month | to_month }}</a> {{ page.day }}, <a href="../../">{{ page.year }}</a></h1>
-<ul class="posts">
-  {% for p in site.collated_posts[page.year][page.month][page.day] reversed %}
-    <li><span class="date">{{ p.date | date:"%Y-%m-%d" }}</span> <a href='{{ p.url }}'>{{ p.title }}</a></li>
-  {% endfor %}
+<ul class="posts">{% for p in site.collated_posts[page.year][page.month][page.day] reversed %}
+<li><span class="date">{{ p.date | date:"%Y-%m-%d" }}</span> <a href='{{ p.url }}'>{{ p.title }}</a></li>{% endfor %}
 </ul>

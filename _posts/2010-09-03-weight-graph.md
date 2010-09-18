@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Weight Graph
 tags: health
+title: Weight Graph
 ---
 
 [Weightbot](http://tapbots.com/software/weightbot/) という iPhone アプリで日々の体重管理をしているのですが、グラフが見辛かったので自分で作ってみた。

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Wedding party
 tags: diary
+title: Wedding party
 ---
 
 * [Q.E.D. CLUB](http://www.qed.co.jp/) ([tabelog](http://r.tabelog.com/tokyo/A1303/A130302/13003164/))

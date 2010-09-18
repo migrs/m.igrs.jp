@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Hello Jekyll
 tags: jekyll
+title: Hello Jekyll
 ---
 
 [jekyll](http://wiki.github.com/mojombo/jekyll)
