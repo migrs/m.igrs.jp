@@ -1,16 +1,14 @@
 ---
 layout: default
 ---
-
 <div class="post">
-  <h1><a href="{{site.url}}{{page.url}}">{{ page.title }}</a></h1>
-  {{ content }}
-
+<h1><a href="{{site.url}}{{page.url}}">{{ page.title }}</a></h1>
+{{ content }}
 </div>
 <div class="post-foot" style="font-size:small;text-align:right;">
-  <span class="tags">{% for tag in page.tags %}<a href="{{site.url}}/tags/{{tag}}/">{{tag}}</a>{% if forloop.last == false %},&nbsp;{% endif %}{% endfor %}</span>
-  <span class="posted_at">Posted at <a href="./">{{ page.date | date:"%Y-%m-%d" }}</a></span>
-  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="migrs">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<span class="tags">{% for tag in page.tags %}<a href="{{site.url}}/tags/{{tag}}/">{{tag}}</a>{% if forloop.last == false %},&nbsp;{% endif %}{% endfor %}</span>
+<span class="posted_at">Posted at <a href="./">{{ page.date | date:"%Y-%m-%d" }}</a></span>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="migrs">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 </div>
 <hr />
 <div class="comments">

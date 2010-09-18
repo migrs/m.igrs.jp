@@ -1,6 +1,6 @@
 #destination: ./_site
 #auto:        false
-lsi: true
+#lsi: true
 #server_port: 4000
 pygments: true
 #markdown:    maruku
@@ -15,6 +15,6 @@ tag_title_prefix: "Tags &raquo; "
 related_tags: true
 
 #category_dir: categories
-category_title_prefix: "Topics &raquo; "
+category_title_prefix: "Categories &raquo; "
 
 #content_delimeter: "<!-- -**-END-**- -->"
