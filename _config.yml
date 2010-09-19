@@ -8,7 +8,7 @@ markdown: rdiscount
 #permalink:   date
 exclude: [CNAME, README, public]
 title: "m.igrs.jp"
-#url: "http://m.igrs.jp"
+url: "http://m.igrs.jp"
 
 #tag_dir: tags
 tag_title_prefix: "Tags &raquo; "
