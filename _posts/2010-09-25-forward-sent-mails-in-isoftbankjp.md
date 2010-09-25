@@ -6,7 +6,7 @@ title: i.softbank.jp の送信メールも Gmail に転送する
 [i.softbank.jp 宛のメールを Gmail に転送する](/2010/09/22/forward-isoftbankjp-to-gmail.html) の続き。
 
 * 受信メールだけではなく送信メールも対象にして転送させることで全部 Gmail で見れるようにしたい。
-* しかも転送ではなく移動してしまった方が二重で管理する必要もなくスッキリしているような気がしたのでそういう実装にしてみた。
+* しかも転送ではなく移動してしまった方が二重で管理する必要もなくスッキリしているような気がしたのでそうした。
 * また、Inbox にメールを attach するだけだと、[boxcar](http://http://boxcar.io/) が反応してくれないので、直接通知するようにした。
 
 {% highlight ruby %}
@@ -55,5 +55,6 @@ BEGIN {
   end
 }
 {% endhighlight %}
+[This Gist](http://gist.github.com/596342)
 
 Gmail の言語設定を日本語にすると、IMAPフォルダも日本語になってしまうので注意が必要
