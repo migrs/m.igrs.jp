@@ -7,7 +7,7 @@ title: i.softbank.jp の送信メールも Gmail に転送する
 
 * 受信メールだけではなく送信メールも対象にして転送させることで全部 Gmail で見れるようにしたい。
 * しかも転送ではなく移動してしまった方が二重で管理する必要もなくスッキリしているような気がしたのでそうした。
-* また、Inbox にメールを attach するだけだと、[boxcar](http://http://boxcar.io/) が反応してくれないので、直接通知するようにした。
+* また、Inbox にメールを append するだけだと、[boxcar](http://http://boxcar.io/) が反応してくれないので、直接通知するようにした。
 
 {% highlight ruby %}
 SB_ACCOUNT = ['USERNAME', 'PASSWORD']
