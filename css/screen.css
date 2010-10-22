@@ -1,0 +1,30 @@
+/* @override
+	http://m.igrs.jp/css/screen.css
+	file:///css/screen.css
+*/
+
+body {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+#content {
+  text-align: left;
+  width: 70%;
+  margin: 20px auto 0px auto;
+  padding: 0px 0px 0px 0px;
+}
+
+.posts {
+  list-style: none;
+}
+.posts .date {
+  color: silver;
+  font-family: monospace;
+}
+
+#footer {
+  font: small "Lucida Grande", Lucida, Verdana, sans-serif;
+}

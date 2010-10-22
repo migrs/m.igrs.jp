@@ -3,5 +3,6 @@ layout: page
 title: Tags
 ---
 <h1><a href="{{site.baseurl}}/tags/">Tags</a></h1>
-{% for tag in site.iterable.tags %}
-<a style="font-size: {{ tag.posts | size | times:1.5 | plus: 10 }}px;" href="{{site.baseurl}}/tags/{{tag.name}}">{{tag.name}}</a>{% if forloop.last == false %},&nbsp;{% endif %}{% endfor %}
+{% for tag in site.iterable.tags %}{%if tag.name != 'wakoopa' %}
+<a style="font-size: {{ tag.posts | size | times:1.5 | plus: 10 }}px;" href="{{site.baseurl}}/tags/{{tag.name}}">{{tag.name}}</a>{% if forloop.last == false %},&nbsp;{% endif %}
+{% endif %}}{% endfor %}

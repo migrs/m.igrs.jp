@@ -12,6 +12,7 @@ url: "http://m.igrs.jp"
 
 #tag_dir: tags
 tag_title_prefix: "Tags &raquo; "
+tag_exclude: [wakoopa]
 related_tags: true
 
 #category_dir: categories
