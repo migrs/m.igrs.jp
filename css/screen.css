@@ -26,5 +26,6 @@ body {
 }
 
 #footer {
+  margin-top: 2em;
   font: small "Lucida Grande", Lucida, Verdana, sans-serif;
 }
