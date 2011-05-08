@@ -2,8 +2,40 @@
 layout: default
 title: m.igrs.jp
 ---
-<ul class="posts">
+<div id="commit">
+  <div class="group">
+    <div class="envelope commit">
+      <div class="human">
+        <div class="message">Hello World!</div>
+        <div class="actor">
+          <div class="gravatar">
+            <img src="https://secure.gravatar.com/avatar/6fd2e23d73c26ccbd7df9e3eefacd3ae?s=140&d=https://d3nwyuy0nl342s.cloudfront.net%2Fimages%2Fgravatars%2Fgravatar-140.png" alt="" width="30" height="30">
+          </div>
+          <div class="name"><a href="/migrs">migrs</a> <span>(author)</span></div>
+          <div class="date">
+            <abbr class="relatize relatized" title="1974-09-10">September 10, 1974</abbr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="breadcrumb" style="padding-bottom:2px;">
+    <b><a href="https://github.com/migrs/m.igrs.jp">m.igrs.jp</a></b> /<a href="https://github.com/migrs/m.igrs.jp/tree/master/_posts" style="color:black;"> _posts</a>
+</div>
+<table class="tree-browser" cellpadding="0" cellspacing="0" style="width:667;">
+  <tbody>
+    <tr class="header">
+      <th></th>
+      <th>date</th>
+      <th>title</th>
+    </tr>
 {% for post in site.posts %}
-<li><span class="date">{{ post.date | date:"%Y-%m-%d" }}</span> <a href="{{ post.url }}">{{ post.title }}</a></li>
+    <tr>
+      <td class="icon"> <img alt="file" height="16" src="https://d3nwyuy0nl342s.cloudfront.net/images/icons/txt.png" width="16"></td>
+      <td> <span class="relatize relatized">{{ post.date | date:"%Y-%m-%d" }}</span> </td>
+      <td> <a href="{{ post.url }}">{{ post.title }}</a> </td>
+    </tr>
 {% endfor %}
-</ul>
+  </tbody>
+</table>
