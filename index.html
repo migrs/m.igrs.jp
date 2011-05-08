@@ -1,39 +1,10 @@
 ---
 layout: default
-title: migrs.github.com
+title: m.igrs.jp
 ---
-<h1><a href="http://migrs.github.com/">{{ page.title }}</a></h1>
-<h2>Posts</h2>
+<h1>Masato Igarashi</h1>
 <ul class="posts">
-{% for post in site.posts limit:20 %}{% if post.tags.first != 'wakoopa' %}
+{% for post in site.posts %}
 <li><span class="date">{{ post.date | date:"%Y-%m-%d" }}</span> <a href="{{ post.url }}">{{ post.title }}</a></li>
-{% endif %}{% endfor %}
+{% endfor %}
 </ul>
-
-<h2>Tags</h2>
-<div style="margin-left: 2em;">
-{% for tag in site.iterable.tags %}{%if tag.name != 'wakoopa' %}
-<a style="font-size: {{ tag.posts | size | times:1.5 | plus: 10 }}px;" href="{{site.baseurl}}/tags/{{tag.name}}">{{tag.name}}</a>{% if forloop.last == false %}&nbsp;{% endif %}
-{% endif %}{% endfor %}
-</div>
-
-<h2>Reports</h2>
-<div style="margin-left: 2em;">
-<a href="{{site.baseurl}}/tags/wakoopa">wakoopa</a>
-</div>
-
-<h2>Archives</h2>
-<div style="margin-left: 2em;">
-<a href="{{site.baseurl}}/2011/">2011</a>
-<a href="{{site.baseurl}}/2010/">2010</a>
-<a href="{{site.baseurl}}/2009/">2009</a>
-<a href="{{site.baseurl}}/2008/">2008</a>
-</div>
-
-<h2>About me</h2>
-<div style="margin-left: 2em;">
-<a href="http://bit.ly/migrs_facebook">facebook</a>
-<a href="http://bit.ly/migrs_twitter">twitter</a>
-<a href="http://bit.ly/migrs_tumblr">tumblr</a>
-<a href="http://bit.ly/migrs_github">github</a>
-</div>

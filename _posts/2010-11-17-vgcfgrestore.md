@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: lvm
+tags: [lvm]
 title: LVM上の操作の復旧方法
 ---
 誤って lvremove してしまい焦ったのですが、復旧方法が用意されていたのでメモ。

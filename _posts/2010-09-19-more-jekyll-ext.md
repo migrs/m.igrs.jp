@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: jekyll
+tags: [jekyll]
 title: more jekyll ext
 ---
 昨日に引き続き[jekyll_ext](http://github.com/rfelix/jekyll_ext)のお試し。

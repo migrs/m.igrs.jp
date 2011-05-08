@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: php nginx debian
+tags: [php, nginx, debian]
 title: Debian Squeeze で nginx + php-fpm
 ---
 

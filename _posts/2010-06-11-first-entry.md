@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: jekyll
+tags: [jekyll]
 title: Hello Jekyll
 ---
 

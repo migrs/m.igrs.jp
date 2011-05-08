@@ -3,18 +3,70 @@
   <title>{{ page.title }}</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <link href="http://feeds.feedburner.com/migrsjp" rel="alternate" type="application/atom+xml" />
-  <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
-  <link rel="stylesheet" href="/css/autumn.css" type="text/css" media="screen, projection" />
+  <link href="http://github.com/stylesheets/bundle_common.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://github.com/stylesheets/bundle_github.css" media="screen" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8"/>
+  <link rel="stylesheet" href="/css/print.css" type="text/css" media="print">
 
   {% include google_analytics.html %}
 </head>
 <body>
-<div id="content">
+<div id="main">
+  <div id="header" class="basic">
+    <div class="site">
+      <div class="logo boring">
+        <a href="/"><img src="/images/m.igrs.jp.png" alt="github learn logo" /></a>
+      </div>
+      <div class="topsearch">
+        <ul class="nav logged_out">
+          <li><a href="/">Home</a></li>
+          <li><a href="https://github.com/migrs/migrs.github.com">Source</a></li>
+          <li><a href="http://bit.ly/migrs_facebook">Facebook</a></li>
+          <li><a href="http://bit.ly/migrs_twitter">Twitter</a></li>
+          <li><a href="http://bit.ly/migrs_github">github</a></li>
+          <li><a href="https://github.com/inbox/new/migrs">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="content" class="site">
+    <div id="guides">
+      <div class="guide">
+        <div class="main">
+          <div class="wikistyle">
 {{ content }}
+          </div>
+        </div>
+        <div class="sidebar">
+          <h3>About me</h3>
+          <ul class="categories">
+            <li><a href="http://bit.ly/migrs_facebook">facebook</a></li>
+            <li><a href="http://bit.ly/migrs_twitter">twitter</a></li>
+            <li><a href="http://bit.ly/migrs_tumblr">tumblr</a></li>
+            <li><a href="http://bit.ly/migrs_github">github</a></li>
+          </ul>
+
+          <h3>Tags</h3>
+          {% for tag in site.tags %}
+          <a href="/tags/{{tag[0]}}">{{tag[0]}}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
 </div>
-<div id="footer">
-Copyright&copy; <a href="http://bit.ly/migrs_facebook">Masato Igarashi</a>.
-Powered by <a href="http://bit.ly/mojombo_jekyll">Jekyll</a>.
+  </div>
+  <div id="footer">
+    <div class="site">
+      <div class="info">
+        <div class="links">
+        </div>
+        <div class="company">
+          Copyright&copy; <a href="http://bit.ly/migrs_facebook">Masato Igarashi</a>.
+          Powered by <a href="http://bit.ly/mojombo_jekyll">Jekyll</a>.
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 </html>
