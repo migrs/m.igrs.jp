@@ -1,16 +1,35 @@
 ---
 layout: default
 ---
+<div id="commit">
+  <div class="group">
+    <div class="envelope commit">
+      <div class="human" style="width:30em;">
+        <div class="message">{{ page.title }}</div>
+        <div class="actor">
+          <div class="gravatar">
+            <img src="https://secure.gravatar.com/avatar/6fd2e23d73c26ccbd7df9e3eefacd3ae?s=140&d=https://d3nwyuy0nl342s.cloudfront.net%2Fimages%2Fgravatars%2Fgravatar-140.png" alt="" width="30" height="30">
+          </div>
+          <div class="name"><a href="/migrs">migrs</a> <span>(author)</span></div>
+          <div class="date">
+            <abbr class="relatize relatized">{{ page.date | date:"%B %d, %Y" }}</abbr>
+          </div>
+        </div>
+      </div>
+      <div class="machine">
+        <span class="tags">{% for tag in page.tags %}<a href="{{site.url}}/tags/{{tag}}/">{{tag}}</a>{% if forloop.last == false %},&nbsp;{% endif %}{% endfor %}</span>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="post">
 <h1><a href="{{site.url}}{{page.url}}">{{ page.title }}</a></h1>
 {{ content }}
 </div>
-<div class="post-foot" style="font-size:small;text-align:right;">
-<span class="tags">{% for tag in page.tags %}<a href="{{site.url}}/tags/{{tag}}/">{{tag}}</a>{% if forloop.last == false %},&nbsp;{% endif %}{% endfor %}</span>
-<span class="posted_at">Posted at <a href="./">{{ page.date | date:"%Y-%m-%d" }}</a></span>
-</div>
+<div style="margin:30px 0 10px 0;">
 <a href="http://b.hatena.ne.jp/entry/{{site.url}}{{page.url}}" class="hatena-bookmark-button" data-hatena-bookmark-title="{{ page.title }}" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="{{site.url}}{{page.url}}" show_faces="true" width="450"></fb:like>
+</div>
 <hr />
 <div class="comments">
 {% include disqus_thread.html %}
