@@ -1,5 +1,7 @@
 module Jekyll
   class Site
+    alias_method :orig_site_payload, :site_payload
+
     # Constuct an array of hashes that will allow the user, using Liquid, to
     # iterate through the keys of _kv_hash_ and be able to iterate through the
     # elements under each key.
@@ -22,19 +24,20 @@ module Jekyll
     def make_iterable(kv_hash, options)
       options = {:index => 'name', :items => 'items'}.merge(options)
       result = []
-      kv_hash.each do |key, value|
+      kv_hash.sort.each do |key, value|
         result << { options[:index] => key, options[:items] => value }
       end
       result
-    end    
-  end
-  
-  AOP.around(Site, :site_payload) do |site_instance, args, proceed, abort|
-    result = proceed.call
-    result['site']['iterable'] = {
-      'categories' => site_instance.make_iterable(site_instance.categories, :index => 'name', :items => 'posts'),
-      'tags' => site_instance.make_iterable(site_instance.tags, :index => 'name', :items => 'posts')
-    }
-    result
+    end
+
+    def site_payload
+      payload = orig_site_payload
+      payload['site']['iterable'] = {
+        'categories'  => make_iterable(self.categories, :index => 'name', :items => 'posts'),
+        'tags'        => make_iterable(self.tags, :index => 'name', :items => 'posts')
+      }
+      payload
+    end
+
   end
 end
