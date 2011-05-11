@@ -5,53 +5,58 @@
   <link href="http://feeds.feedburner.com/migrsjp" rel="alternate" type="application/atom+xml" />
   <link href="http://github.com/stylesheets/bundle_common.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="http://github.com/stylesheets/bundle_github.css" media="screen" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8"/>
-  <link rel="stylesheet" href="/css/print.css" type="text/css" media="print">
-
+  <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
   {% include google_analytics.html %}
 </head>
 <body>
 <div id="main">
   <div id="header" class="basic">
-    <div class="site">
-      <div class="logo boring">
-        <a href="/"><img src="/images/m.igrs.jp.png" alt="github learn logo" /></a>
+    <a class="logo" href="/"><img alt="m.igrs.jp" class="default" src="/images/m.igrs.jp.png"></a>
+    <div class="userbox">
+      <div class="avatarname">
+        <a href="https://github.com/migrs"><img src="https://secure.gravatar.com/avatar/6fd2e23d73c26ccbd7df9e3eefacd3ae?s=140&amp;d=https://d3nwyuy0nl342s.cloudfront.net%2Fimages%2Fgravatars%2Fgravatar-140.png" alt="" width="20" height="20"></a>
+        <a href="https://github.com/migrs" class="name">migrs</a>
       </div>
-      <div class="topsearch">
-        <ul class="nav logged_out">
-          <li><a href="/">Home</a></li>
-          <li><a href="http://bit.ly/migrs_facebook">Facebook</a></li>
-          <li><a href="http://bit.ly/migrs_twitter">Twitter</a></li>
-          <li><a href="http://bit.ly/migrs_github">github</a></li>
-          <li><a href="https://github.com/inbox/new/migrs">Contact</a></li>
+      <ul class="usernav">
+        <li><a href="http://bit.ly/migrs_facebook">Facebook</a></li>
+        <li><a href="http://bit.ly/migrs_twitter">Twitter</a></li>
+        <li><a href="http://bit.ly/migrs_github">github</a></li>
+        <li><a href="https://github.com/inbox/new/migrs">Contact me</a></li>
+      </ul>
+    </div>
+    <div class="topsearch">
+        <form action="#" id="top_search_form" method="get">
+          <a href="/search" class="advanced-search tooltipped downwards" original-title="Advanced Search">Advanced Search</a>
+          <input type="search" class="search my_repos_autocompleter placeholder ac_input" name="q" results="5" placeholder="Search…" autocomplete="off"> <input type="submit" value="Search" class="button">
+        </form>
+        <ul class="nav">
+          <li><a href="https://github.com/migrs/QSTwit/downloads">QSTwit</a></li>
         </ul>
-      </div>
     </div>
   </div>
   <div id="content" class="site">
-    <div id="guides">
-      <div class="guide">
-        <div class="main">
-          <div class="wikistyle">
-{{ content }}
+      <!--
+    <div class="pagehead repohead vis-public fork instapaper_ignore readability-menu">
+      <ul class="tabs">
+        <li><a href="/migrs/QSTwit" class="selected">Home</a></li>
+        <li><a href="/migrs/QSTwit/network">Network</a></li>
+        <li class="contextswitch nochoices">
+          <span class="toggle leftwards">
+            <em>Branch:</em>
+            <code>master</code>
+          </span>
+        </li>
+      </ul>
+      <div id="repo_details" class="metabox clearfix">
+        <div id="repository_desc_wrapper">
+          <div id="repository_description" rel="repository_description_edit" class="editable-text">
+            <p>A Quicksilver Twitter posting plugin</p>
           </div>
-        </div>
-        <div class="sidebar">
-          <h3>About me</h3>
-          <ul class="categories">
-            <li><a href="http://bit.ly/migrs_facebook">Masato Igarashi</a></li>
-            <li><a href="http://bit.ly/migrs_twitter">@migrs</a></li>
-            <li><a href="http://4sq.com/migrs_foursquare">Tokyo, Japan</a></li>
-          </ul>
-
-          <h3>Tags</h3>
-          {% for tag in site.tags %}
-          <a href="/tags/{{tag[0]}}">{{tag[0]}}</a>
-          {% endfor %}
         </div>
       </div>
     </div>
-</div>
+    -->
+{{ content }}
   </div>
   <div id="footer">
     <div class="site">
