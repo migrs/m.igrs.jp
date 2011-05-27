@@ -76,7 +76,8 @@ sv1,sv2 の両方で実行
       } 
     }
 
-※sv1, sv2 は実際のホスト名である必要があります。
+- sv1, sv2 は実際のホスト名である必要があります。
+- sv1,sv2 全く同じものを配置
 
 #### メタ情報の作成
 sv1,sv2 の両方で実行
@@ -137,6 +138,7 @@ sv1,sv2 の両方で実行
       name = sv2
       cluster = ocfs2
 
+- sv1,sv2 全く同じものを配置
 
 #### 設定ツールの起動
     sudo dpkg-reconfigure ocfs2-tools
