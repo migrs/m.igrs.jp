@@ -106,7 +106,7 @@ sv1,sv2 の両方で実行
 
 #### もう片方も Primary に昇格させ Dual Primary に！
 もう片方(sv2)にて
-    sudo /sbin/drbdadm -- -o primary r0
+    sudo /sbin/drbdadm primary r0
 
 とすることで、`st:Primary/Primary ds:UpToDate/UpToDate` な状態になりブロックデバイスレベルでの Dual Primary 構成の完成です。
 
