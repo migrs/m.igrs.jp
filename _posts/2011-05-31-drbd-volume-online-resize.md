@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [drbd, ocfs2, debian, lvm]
+tags: [drbd, ocfs2, lvm]
 title: DRBDボリュームのオンラインリサイズ
 ---
 
@@ -15,6 +15,7 @@ Dual Primary で構成している状態だとオンラインリサイズ出来�
 
 片方を Secondary に降格
 
+    sv2$ umount /mnt/drbd0
     sv2$ sudo drbdadm secondary r0
 
 drbdadm resize コマンドの実行。Primary のみで実行。(see [リソースのサイズ変更](http://bit.ly/kj3Yk5))
@@ -27,13 +28,9 @@ drbdadm resize コマンドの実行。Primary のみで実行。(see [リソー
 
 これでリサイズ完了。
 
-最後に一時降格した Secondary を Primary に昇格
+最後に一時降格した Secondary を Primary に昇格しマウントして終了
 
     sv2$ sudo drbdadm primary r0
-
-両方のサーバで拡張されたボリュームをマウントして終了
-
-    sv1$ mount /dev/drbd0 /mnt/drbd0
     sv2$ mount /dev/drbd0 /mnt/drbd0
 
 ## サイズ確認方法
