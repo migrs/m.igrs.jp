@@ -3,13 +3,17 @@ layout: default
 ---
 <div id="guides">
   <div class="guide">
-      <ul style="float:right;list-style:none;">
-        <li style="float:right;"><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=169204006461153&amp;xfbml=1"></script><fb:like href="{{site.url}}{{page.url}}" send="true" layout="button_count" width="100" show_faces="false" font=""></fb:like></li>
-        <li style="float:right;"><a href="http://b.hatena.ne.jp/entry/{{site.url}}{{page.url}}" class="hatena-bookmark-button" data-hatena-bookmark-title="{{ page.title }}" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li>
-      </ul>
+    <ul style="float:right;list-style:none;">
+      <li style="float:right;"><div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=169204006461153&amp;xfbml=1"></script><fb:like href="{{site.url}}{{page.url}}" send="true" layout="button_count" width="100" show_faces="false" font=""></fb:like></li>
+      <li style="float:right;"><a href="http://b.hatena.ne.jp/entry/{{site.url}}{{page.url}}" class="hatena-bookmark-button" data-hatena-bookmark-title="{{ page.title }}" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script></li>
+    </ul>
     <div class="main">
       <h1 style="border-bottom:2px solid #CCC;font-size:1.6em;margin-bottom:0;"><a href="{{site.url}}{{page.url}}">{{ page.title }}</a></h1>
-      <div style="text-align:right;font-family:monospace;">Posted at {{ page.date | date:"%B %d, %Y" }}</div>
+      <div style="text-align:right;font-family:monospace;">
+<a href="https://github.com/migrs/m.igrs.jp/raw/master/_posts/{{page.url | replace: '/','-' | replace_first: '-','' | replace: '.html', '.md'}}">raw</a>
+<a href="https://github.com/migrs/m.igrs.jp/blame/master/_posts/{{page.url | replace: '/','-' | replace_first: '-','' | replace: '.html', '.md'}}">blame</a>
+<a href="https://github.com/migrs/m.igrs.jp/commits/master/_posts/{{page.url | replace: '/','-' | replace_first: '-','' | replace: '.html', '.md'}}">history</a>
+<a href="https://github.com/migrs/m.igrs.jp/blob/master/_posts/{{page.url | replace: '/','-' | replace_first: '-','' | replace: '.html', '.md'}}" style="color:black;">Posted at {{ page.date | date:"%B %d, %Y" }}</a></div>
       <div class="page">
         <div class="wikistyle">
 {{ content }}
