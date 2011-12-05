@@ -6,7 +6,7 @@ pygments: true
 #markdown:    maruku
 markdown: rdiscount
 #permalink:   date
-exclude: [CNAME, README.md, public]
+exclude: [CNAME, README.md, Gemfile, Gemfile.lock, public]
 title: "m.igrs.jp"
 url: "http://m.igrs.jp"
 
