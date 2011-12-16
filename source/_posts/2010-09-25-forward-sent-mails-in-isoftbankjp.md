@@ -9,7 +9,8 @@ title: i.softbank.jp の送信メールも Gmail に転送する
 * しかも転送ではなく移動してしまった方が二重で管理する必要もなくスッキリしているような気がしたのでそうした。
 * また、Inbox にメールを append するだけだと、[boxcar](http://http://boxcar.io/) が反応してくれないので、直接通知するようにした。
 
-{% highlight ruby %}
+
+``` ruby source http://gist.github.com/596342 gist
 SB_ACCOUNT = ['USERNAME', 'PASSWORD']
 GM_ACCOUNT = ['USERNAME', 'PASSWORD']
 BOXCAR_ADDR = "123456.123456@push.boxcar.io"
@@ -54,7 +55,6 @@ BEGIN {
     end
   end
 }
-{% endhighlight %}
-[This Gist](http://gist.github.com/596342)
+```
 
 Gmail の言語設定を日本語にすると、IMAPフォルダも日本語になってしまうので注意が必要

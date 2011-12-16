@@ -11,8 +11,10 @@ title: Python で UnocodeDecodeError
 
 `/Library/Python/2.6/site-packages/sitecustomize.py`
 
-    import sys
-    sys.setdefaultencoding("utf-8")
+``` python
+import sys
+sys.setdefaultencoding("utf-8")
+```
 
 というファイルを作成するとこで解決。
 

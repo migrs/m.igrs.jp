@@ -37,44 +37,46 @@ sv1,sv2 の両方で実行
 
 ### 設定
 #### `/etc/drbd.d/r0.res` の編集
-    resource r0 {
-      protocol C;
-    
-      startup {
-        wfc-timeout 30;
-        degr-wfc-timeout 10;
-        become-primary-on both;
-      }
-    
-      syncer {
-        rate 1G;
-      }
-    
-      disk {
-        on-io-error detach;
-      }
-    
-      net {
-        allow-two-primaries;
-        after-sb-0pri discard-zero-changes;
-        after-sb-1pri discard-secondary;
-        after-sb-2pri disconnect;
-      }
-    
-      on sv1 {
-        device    /dev/drbd0;
-        disk      /dev/sys/drbd0;
-        address   192.168.0.1:7789;
-        flexible-meta-disk /dev/sys/drbd0_meta;
-      }
-      
-      on sv2 {
-        device    /dev/drbd0;
-        disk      /dev/sys/drbd0;
-        address   192.168.0.2:7789;
-        flexible-meta-disk /dev/sys/drbd0_meta;
-      } 
-    }
+```
+resource r0 {
+  protocol C;
+
+  startup {
+    wfc-timeout 30;
+    degr-wfc-timeout 10;
+    become-primary-on both;
+  }
+
+  syncer {
+    rate 1G;
+  }
+
+  disk {
+    on-io-error detach;
+  }
+
+  net {
+    allow-two-primaries;
+    after-sb-0pri discard-zero-changes;
+    after-sb-1pri discard-secondary;
+    after-sb-2pri disconnect;
+  }
+
+  on sv1 {
+    device    /dev/drbd0;
+    disk      /dev/sys/drbd0;
+    address   192.168.0.1:7789;
+    flexible-meta-disk /dev/sys/drbd0_meta;
+  }
+  
+  on sv2 {
+    device    /dev/drbd0;
+    disk      /dev/sys/drbd0;
+    address   192.168.0.2:7789;
+    flexible-meta-disk /dev/sys/drbd0_meta;
+  } 
+}
+```
 
 - sv1, sv2 は実際のホスト名である必要があります。
 - sv1,sv2 全く同じものを配置
@@ -120,23 +122,25 @@ sv1,sv2 の両方で実行
 ### 設定
 
 #### `/etc/ocfs2/cluster.conf` の編集
-    cluster:
-      node_count = 2
-      name = ocfs2
-    
-    node:
-      ip_port = 7777
-      ip_address = 192.168.0.1
-      number = 0
-      name = sv1
-      cluster = ocfs2
-    
-    node:
-      ip_port = 7777
-      ip_address = 192.168.0.2
-      number = 1
-      name = sv2
-      cluster = ocfs2
+```
+cluster:
+  node_count = 2
+  name = ocfs2
+
+node:
+  ip_port = 7777
+  ip_address = 192.168.0.1
+  number = 0
+  name = sv1
+  cluster = ocfs2
+
+node:
+  ip_port = 7777
+  ip_address = 192.168.0.2
+  number = 1
+  name = sv2
+  cluster = ocfs2
+```
 
 - sv1,sv2 全く同じものを配置
 

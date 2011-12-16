@@ -35,7 +35,7 @@ commands:
 
 ### 自動起動設定 ###
 [ここ](http://wiki.dropbox.com/Regole/TextBasedLinuxInstall)にあるものだと stop/status 等動かなかったので若干修正
-{% highlight sh %}
+``` sh /etc/init.d/dropbox http://gist.github.com/592840 gist
 #!/bin/sh
 # /etc/init.d/dropbox
 ### BEGIN INIT INFO
@@ -102,8 +102,8 @@ case "$1" in
 esac
 
 exit 0
-{% endhighlight %}
-[This Gist](http://gist.github.com/592840)
+```
+
 
 あとは、
     chmod +x /etc/init.d/dropbox

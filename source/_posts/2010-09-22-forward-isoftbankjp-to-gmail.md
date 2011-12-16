@@ -6,7 +6,7 @@ title: i.softbank.jp 宛のメールを Gmail に転送する
 i.softbank.jp メールは転送する手段が用意されていないのでスクリプトを自作した。
 (i.softbank.jp メールは使ってないけど)
 
-{% highlight ruby %}
+``` ruby source http://gist.github.com/591166 gist
 require 'net/imap'
 require 'time'
 
@@ -30,6 +30,4 @@ if ids = sb.search(%w(UNSEEN)) and ids.size > 0
   end
   puts "#{ids.size} mail(s) forwarded."
 end
-{% endhighlight %}
-[This Gist](http://gist.github.com/591166)
-
+```
