@@ -42,6 +42,8 @@ Assistive Touch 使って頑張ってる人もいるようですが、交換し�
 合計３時間くらいみておいた方がいいです。
 
 ## 修理
+[Installing iPhone 4 Home Button](http://www.ifixit.com/Guide/Installing-iPhone-4-Home-Button/3144/) の手順で進めていきます。
+
 ### 分解
 とにかくその精密さとパーツの多さに驚きながら分解します。
 
