@@ -6,8 +6,8 @@ comments: true
 categories: 
 ---
 
-しばらくの間 [github パクリデザイン](http://gyazo.com/085cca9f560924d7357df4cf75743164)でしたが、
-[レイアウト崩れて](http://gyazo.com/5a49da61cbd3f87582562f5739f9b9f4)きてしまった(リソース直接参照してました。すいません...)、
+しばらくの間 [github パクリデザイン](http://gyazo.com/085cca9f560924d7357df4cf75743164)でしたが
+[レイアウト崩れて](http://gyazo.com/5a49da61cbd3f87582562f5739f9b9f4)きてしまった(リソース直接参照してました。すいません...)
 ので変更することにしました。
 
 ということで今回採用したのが [octopress](http://octopress.org) というブログエンジンです。
