@@ -75,6 +75,8 @@ jekyll の設定ファイルである [_config.yml](https://github.com/imathis/o
 すると`source/_posts/2011-12-17-switching-to-octopress.markdown` が生成されるのでこれを編集します。
 デフォルトは markdown ですが [Rakefile](https://github.com/imathis/octopress/blob/master/Rakefile) で設定変更できます。
 
+ちなみにこの記事のソースは[こちら](https://github.com/migrs/m.igrs.jp/blob/master/source/_posts/2011-12-17-switching-to-octopress.markdown)
+
 
 ### デプロイ
 自分のサーバ等にデプロイする場合は [Rakefile](https://github.com/imathis/octopress/blob/master/Rakefile) の `ssh_user`, `document_root` あたりを変更します。  
