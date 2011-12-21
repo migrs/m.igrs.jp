@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [ruby, gmail, iphone]
+categories: ruby, gmail, iphone
 title: i.softbank.jp 宛のメールを Gmail に転送する
 ---
 i.softbank.jp メールは転送する手段が用意されていないのでスクリプトを自作した。

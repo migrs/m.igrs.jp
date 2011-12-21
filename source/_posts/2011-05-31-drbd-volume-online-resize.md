@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [drbd, ocfs2, lvm]
+categories: drbd, ocfs2, lvm
 title: DRBDボリュームのオンラインリサイズ
 ---
 

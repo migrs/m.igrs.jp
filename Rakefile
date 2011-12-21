@@ -8,7 +8,7 @@ ssh_user       = "masato@igrs.jp"
 ssh_port       = "22"
 document_root  = "~/sites/m.igrs.jp/public"
 rsync_delete   = true
-deploy_default = "push"
+deploy_default = "rsync"
 
 # This will be configured for you when you run config_deploy
 deploy_branch  = "master"

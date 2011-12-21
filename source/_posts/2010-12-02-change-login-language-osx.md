@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [osx]
+categories: osx
 title: ログイン画面の言語を変更する(OSX)
 ---
 

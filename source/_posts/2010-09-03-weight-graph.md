@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [health]
+categories: health
 title: Weight Graph
 ---
 

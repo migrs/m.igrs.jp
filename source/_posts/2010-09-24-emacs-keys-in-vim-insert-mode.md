@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [vim, emacs]
+categories: vim, emacs
 title: Vim Insert mode で Emacs Key Binding を使う
 ---
 編集効率では Vim の方が上だけど、新規でテキスト書く時は Emacs が良いと思っている Vim ユーザなのですが、以下の設定を .vimrc に追加してます。

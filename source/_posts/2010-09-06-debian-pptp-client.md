@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [debian]
+categories: debian
 title: Debian PPTP Client
 ---
 今迄需要がなかったので試したことはなかったが、Debian から Client として VPN 接続する方法についてメモ。

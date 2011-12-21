@@ -1,6 +1,6 @@
 ---
 layout: post
-tags: [diary]
+categories: diary
 title: Wedding party
 ---
 
