@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: php, nginx, debian
+categories: php nginx debian
 title: Debian Squeeze で nginx + php-fpm
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: ruby, gmail, iphone
+categories: ruby gmail iphone
 title: i.softbank.jp の送信メールも Gmail に転送する
 ---
 [i.softbank.jp 宛のメールを Gmail に転送する](/2010/09/22/forward-isoftbankjp-to-gmail.html) の続き。

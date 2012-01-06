@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: drbd, ocfs2, debian, lvm
+categories: drbd ocfs2 debian lvm
 title: DRBD + OCFS2 で Dual Primary クラスタ構築
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: python, osx
+categories: python osx
 title: Python で UnocodeDecodeError
 ---
 以前もハマったことがあるのでメモ。

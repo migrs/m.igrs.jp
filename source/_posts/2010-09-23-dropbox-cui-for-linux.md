@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: linux, dropbox, debian
+categories: linux dropbox debian
 title: Linux CUI 環境で Dropbox を使う
 ---
 公式 Wiki の方に詳しく書いているのでその通りの手順で設定できた。

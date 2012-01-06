@@ -3,7 +3,7 @@ layout: post
 title: "switching to octopress"
 date: 2011-12-17 00:46
 comments: true
-categories: octopress, jekyll
+categories: octopress jekyll
 ---
 
 しばらくの間 [github パクリデザイン](http://gyazo.com/085cca9f560924d7357df4cf75743164)でしたが
