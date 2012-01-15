@@ -6,6 +6,8 @@ title: i.softbank.jp 宛のメールを Gmail に転送する
 i.softbank.jp メールは転送する手段が用意されていないのでスクリプトを自作した。
 (i.softbank.jp メールは使ってないけど)
 
+<!--more-->
+
 ``` ruby source http://gist.github.com/591166 gist
 require 'net/imap'
 require 'time'

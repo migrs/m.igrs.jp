@@ -6,6 +6,8 @@ title: DRBD + OCFS2 で Dual Primary クラスタ構築
 
 DRBD で Dual Primary な構成を実現するには [OCFS2](http://bit.ly/iZ2N4Z) か [GFS2](http://red.ht/k2CYeG) 等のファイルシステムを導入する必要がある。
 
+<!--more-->
+
 [弊社](http://fujisan.co.jp/)[CTO](http://twitter.com/akamiya)曰く、
 > GFS2のほうがクラスタノードへの書き込み反映が早くて、OCFS2のほうがロックマネージメントがうまいっていう感触があるかな。
 

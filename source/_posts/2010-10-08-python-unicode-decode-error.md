@@ -7,6 +7,8 @@ title: Python で UnocodeDecodeError
 
     UnicodeDecodeError: 'ascii' codec can't decode byte 0xe3 in position 27: ordinal not in range(128)
 
+<!--more-->
+
 のようなエラーには、
 
 `/Library/Python/2.6/site-packages/sitecustomize.py`
@@ -21,3 +23,4 @@ sys.setdefaultencoding("utf-8")
 ワンライナで対応するには、以下を実行しましょう。
 
     echo 'import sys\nsys.setdefaultencoding("utf-8")' | sudo tee /Library/Python/2.6/site-packages/sitecustomize.py
+

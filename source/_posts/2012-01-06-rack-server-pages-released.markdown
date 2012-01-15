@@ -13,6 +13,8 @@ categories: rack-server-pages ruby
 
 実は数年前からずっと作りたいと思っていたもので個人ToDoリストに長らく居座っていたものがやっと着手できた。
 
+<!--more-->
+
 Ruby で WEB開発といえば [Ruby on Rails](http://rubyonrails.org/) というデファクトスタンダードを筆頭に
 MVCフレームワークを利用するのが一般的ですが、現状フレームワークを利用しないという選択肢がほとんど無いんですよね。
 

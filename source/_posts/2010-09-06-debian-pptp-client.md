@@ -5,6 +5,8 @@ title: Debian PPTP Client
 ---
 今迄需要がなかったので試したことはなかったが、Debian から Client として VPN 接続する方法についてメモ。
 
+<!--more-->
+
 導入は、`sudo aptitude install pptp-linux` のみ。
 
 `/etc/ppp/chap-secrets` にアカウント情報を記述し

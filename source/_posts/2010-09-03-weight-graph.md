@@ -6,6 +6,8 @@ title: Weight Graph
 
 [Weightbot](http://tapbots.com/software/weightbot/) という iPhone アプリで日々の体重管理をしているのですが、グラフが見辛かったので自分で作ってみた。
 
+<!--more-->
+
 <http://weightbot.com/> から自分のデータをCSVダウンロードできるので、 Google Spreadsheets の Chart Gadget を利用し表示させてます。
 
 Spreadsheets のデータが手動更新なので、自動化させたい。

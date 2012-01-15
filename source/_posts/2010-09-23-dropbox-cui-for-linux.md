@@ -7,6 +7,8 @@ title: Linux CUI 環境で Dropbox を使う
 
 * [How To Install Dropbox In An Entirely Text Based Linux Environment](http://wiki.dropbox.com/TipsAndTricks/TextBasedLinuxInstall)
 
+<!--more-->
+
 ## Setup ##
 ### Dropbox のインストール ###
     wget -O dropbox.tar.gz http://www.dropbox.com/download/?plat=lnx.x86

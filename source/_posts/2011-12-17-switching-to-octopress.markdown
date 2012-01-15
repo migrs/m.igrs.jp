@@ -19,6 +19,8 @@ categories: octopress jekyll
 簡単に言えば [jekyll](http://jekyllrb.com/) にデザイン載せて便利にしたようなブログエンジンです。  
 jekyll 自体に手を加えているわけではなく、jekyll を利用したフレームワークといった感じ。
 
+<!--more-->
+
 ### 特徴
 - HTML5 / CSS3 でデザインもイケてるデフォルトテンプレート
 - スマートフォン対応 ([320 and up](http://stuffandnonsense.co.uk/projects/320andup/) 採用)

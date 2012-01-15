@@ -5,6 +5,8 @@ title: more jekyll ext
 ---
 昨日に引き続き[jekyll_ext](http://github.com/rfelix/jekyll_ext)のお試し。
 
+<!--more-->
+
 [my_jekyll_extensions](http://github.com/rfelix/my_jekyll_extensions) の中から
 
 

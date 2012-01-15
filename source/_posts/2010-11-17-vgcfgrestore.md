@@ -7,6 +7,8 @@ title: LVM上の操作の復旧方法
 
 LVM操作で変更されたメタ情報はすべて `/etc/lvm/archive` に保存されており、これを元に復元作業を行います。
 
+<!--more-->
+
 誤って削除する
      lvremove samplelv
 
