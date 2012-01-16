@@ -15,4 +15,5 @@ group :development do
   gem 'liquid', '2.2.2'
 end
 
-gem 'sinatra', '1.2.6'
+#gem 'sinatra', '1.2.6'
+gem 'rack-server-pages'
