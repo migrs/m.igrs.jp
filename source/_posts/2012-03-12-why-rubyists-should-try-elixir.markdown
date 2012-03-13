@@ -48,7 +48,7 @@ Elixir は最近になって開発が活発化しており、公式サイトも�
 -------------------------------------------
 ## Rubyist が今すぐ Elixir を使ってみるべき理由 (Why Rubyists should try Elixir)
 
-今月(※2011年3月25日現在)の初めに、私は[Elixir](http://github.com/elixir-lang/elixir)についての[スクリーンキャストを公開](http://blog.plataformatec.com.br/2011/03/screencast-elixir-simple-object-orientation-and-charming-syntax-on-top-of-erlang/)している。
+今月(※2011年3月25日現在)の初めに、私は [Elixir](http://github.com/elixir-lang/elixir) についての[スクリーンキャストを公開](http://blog.plataformatec.com.br/2011/03/screencast-elixir-simple-object-orientation-and-charming-syntax-on-top-of-erlang/)している。
  それを見てない人向けに説明すると、Elixir は **Erlangの上にシンプルなオブジェクト指向と魅力的な構文**を提供することを目指している。
 
 私の強いRuby背景に基づいて、私は何度か質問された結果、なぜ Rubyists は Elixir を使ってみるべきかについてのブログ記事を書くことにした。
@@ -131,7 +131,7 @@ Elixir と Erlang のどちらも **while** のような条件ループを提供
 
 まずは Ruby で解決して、次に全く別の解決策を考え出すというように、問題について別視点で考えるということは一般的に非常に洞察的で楽しい過程だ。
 
-また、注意として Elixir と Erlang の両方において末尾再起最適化するので、もし Ruby で似たようなメソッドを実装するなら、巨大なスタックトレースを取得することができる場合のみ上手く動作する。
+また、注意として Elixir と Erlang の両方において末尾再帰最適化するので、もし Ruby で似たようなメソッドを実装するなら、巨大なスタックトレースを取得することができる場合のみ上手く動作する。
 
 ### 単一代入変数と不変性 (Single assignment variables and immutability)
 
@@ -203,7 +203,7 @@ Elixir は Ruby とは異なるオブジェクトモデルを持っている。
 オブジェクトモデルはクラスが無いという意味では JavaScript のようなプロトタイプベースだが、JavaScript や Self のそれとは違い
 オブジェクトはその子供達がどのようになるかを指示することができ、必ずしも親から正確にコピーされない。
 
-これについてのより多くの情報は [Elixir の README](http://github.com/elixir-lang/elixir) にある。そこには、本当の private メソッド（多分それは Ruby2.0 含まれるかも？）やローカルメソッド呼び出しのようないくつかの他のクールな機能の情報も含まれる。
+これについてのより多くの情報は [Elixir の README](http://github.com/elixir-lang/elixir) にある。そこには、本当の private メソッド（多分それは Ruby 2.0 に含まれるかも？）やローカルメソッド呼び出しのようないくつかの他のクールな機能の情報も含まれる。
 
 常に他のオブジェクトモデルを使用することによって多くを学ぶことができ、このチップは Elixir だけに制限されるものではない。
 あなたがもし JavaScript のオブジェクトモデルまたは他のプロトタイプベースの言語に精通していないのであれば、今それを学ぶことを勧める。
