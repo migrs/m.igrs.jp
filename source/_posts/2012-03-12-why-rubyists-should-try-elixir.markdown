@@ -23,8 +23,30 @@ Elixir は最近になって開発が活発化しており、公式サイトも�
 
 英語・日本語問わず語学苦手なので読み難い代物になってしまっているが間違いがあったら指摘して欲しい。
 
+#### 追記(2012-03-13)：
+昨日 Elixir 勉強会(Shinjuku.ex #1)で初めて [Getting Started Guide](http://elixir-lang.org/getting_started/1.html) を読んだのだが、今の Elixir は訳した記事が書かれた当時とはかなりシンタックスが変更されているようだ。 
+なので記事中のコードを最新(0.4.0.dev)に合わせて書き直した。
+
 <!-- more -->
+
+変更されていた点を列挙すると、
+
+- コメントアウトは `%` でなく `#`
+- アトムは`\``(シングルクォート)ではなく`:`(セミコロン)
+- `module` -> `defmodule`
+- `if` や `defmodule` には `do` が必要
+- `else` -> `else:`
+
+[Diff はこちら](https://github.com/migrs/m.igrs.jp/commit/0747d7c8cf7cbf867d1654e42f6c6a1bd296308)
+
+少し突っ込んでみて分かったこととして Erlang と Ruby だけではなく Clojure っぽさを強く感じる言語であるということ。
+
+勉強会については [@mizchi](http://twitter.com/mizchi) 氏のレポートがあるよ
+
+[Elixir勉強会いってきました ~~ ErlangとRubyの中間、Elixir](http://d.hatena.ne.jp/mizchi/20120312/1331566107)
+
 -------------------------------------------
+## Rubyist が今すぐ Elixir を使ってみるべき理由 (Why Rubyists should try Elixir)
 
 今月(※2011年3月25日現在)の初めに、私は[Elixir](http://github.com/elixir-lang/elixir)についての[スクリーンキャストを公開](http://blog.plataformatec.com.br/2011/03/screencast-elixir-simple-object-orientation-and-charming-syntax-on-top-of-erlang/)している。
  それを見てない人向けに説明すると、Elixir は **Erlangの上にシンプルなオブジェクト指向と魅力的な構文**を提供することを目指している。
@@ -40,7 +62,7 @@ Elixir が持つ Ruby から来た *method missing* や *module eval* のよう�
 
 多くを学ぶ中で私が楽しく感じたのは次のとおりだ：
 
-## パターンマッチング (Pattern matching)
+### パターンマッチング (Pattern matching)
 
 私にとってパターンマッチングは関数型プログラミングの中で最も楽しい機能の一つだ。
 これらによって簡単にデータ構造から情報を抽出することができるようになる。
@@ -111,7 +133,7 @@ Elixir と Erlang のどちらも **while** のような条件ループを提供
 
 また、注意として Elixir と Erlang の両方において末尾再起最適化するので、もし Ruby で似たようなメソッドを実装するなら、巨大なスタックトレースを取得することができる場合のみ上手く動作する。
 
-## 単一代入変数と不変性 (Single assignment variables and immutability)
+### 単一代入変数と不変性 (Single assignment variables and immutability)
 
 上記例において Erlang の変数は単一代入であることをまだ見せてなかった。
 これにより次のエラーが発生する：
@@ -170,12 +192,12 @@ response1 = response.cookies.set "tracker_code", "123456"
 いくつかのコメントで指摘したように、Elixir は単一代入を削除することができて、その上で Erlang の基盤と正常にやりとりすることができる。
 このような理由から、Elixir は今では複数回同じ変数に割り当てることができるし、Erlang と比較すると変数のスコープ（Ruby に似ている）に関連したより柔軟なルールがある。
 
-## プロセス間通信 (Communication between processes)
+### プロセス間通信 (Communication between processes)
 
 パターンマッチング、単一代入変数と不変性は、プロセス間の通信のための良い基盤を提供する。
 もしこれらの動作に興味があるなら[このスクリーンキャスト](http://blog.plataformatec.com.br/2011/03/screencast-elixir-simple-object-orientation-and-charming-syntax-on-top-of-erlang/)を見ると良い。
 
-## 異なるオブジェクトモデル (A different Object Model)
+### 異なるオブジェクトモデル (A different Object Model)
 
 Elixir は Ruby とは異なるオブジェクトモデルを持っている。
 オブジェクトモデルはクラスが無いという意味では JavaScript のようなプロトタイプベースだが、JavaScript や Self のそれとは違い
@@ -186,7 +208,7 @@ Elixir は Ruby とは異なるオブジェクトモデルを持っている。
 常に他のオブジェクトモデルを使用することによって多くを学ぶことができ、このチップは Elixir だけに制限されるものではない。
 あなたがもし JavaScript のオブジェクトモデルまたは他のプロトタイプベースの言語に精通していないのであれば、今それを学ぶことを勧める。
 
-## 学ぶ (Just learn)
+### 学ぶ (Just learn)
 
 スクリーンキャストやREADMEで述べたように、標準ライブラリとテストの両方が Elixir 自体で書かれているので Elixir に貢献するのはとても簡単だ。
 さて、Elixir で [Ruby のセット](http://ruby-doc.org/stdlib/libdoc/set/rdoc/index.html)のような何かを実装しなければならないことを想像してみよう。
@@ -195,7 +217,7 @@ Ruby のセットについてさらに深く学ぶだけでなく、使用する
 
 また、パッケージングシステム、ドキュメントパーサーやテスト·ライブラリのようにどの言語でも必要な基本的なツールだけど現在 Elixir で欠如しているこれらはあなたが実装する1つかもしれない！
 
-## 結論 (Wrapping up)
+### 結論 (Wrapping up)
 
 私はあなたが Elixir を試してみること期待するし確信している。この言語に関してもっと知りたければ [README](http://github.com/elixir-lang/elixir) をチェックして欲しい。
 
