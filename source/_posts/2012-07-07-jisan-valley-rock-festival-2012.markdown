@@ -6,6 +6,15 @@ comments: true
 categories: festival korea oversea
 ---
 
+#### 更新情報
+##### 7/9 更新
+
+専用シャトルバスがあるようなのでアクセス方法について更新しました。
+キャンプ道具も一式レンタルできるそうです。
+([韓国にお住まいの方](http://twitter.com/yuruyuruhanguk)から情報いただきました。ありがとうございます！)
+
+## FUJI ROCK FESTIVAL 2012
+
 {% img center http://f.cl.ly/items/3N050N3O0U3a082B2l1V/FRF12_logo.jpg 350 235 Fuji Rock Festival 2012 %}
 
 今年は[異例の開催発表](http://www.fujirockfestival.com/news/?id=1275)で話題になった [FUJI ROCK](http://www.fujirockfestival.com/) ですがいよいよ今月末まで迫ってきました。
@@ -19,7 +28,7 @@ categories: festival korea oversea
 
 毎年では無いものの結構参戦しているのですがここ最近は一日に焦点絞っての参加になることが多いです。(お値段以上の価値があるイベントだとは思いますが)
 
-## Jisan Valley Rock Festival 2012
+## JISAN VALLEY ROCK FESTIVAL 2012
 
 ここで本題。
 海を渡ったお隣韓国でも FUJI ROCK とまったく同じ日程(7/27-29)でフェスが開催されます。
@@ -61,9 +70,19 @@ FUJI ROCK が[苗場スキー場](http://www.princehotels.co.jp/ski/naeba/)で�
 
 #### アクセス方法
 
-以前までは専用シャトルバスがあったようなのですが今年は無くなってしまったようです。
-交通手段としては、公共交通機関(バス)か車(レンタカー)のどちらかになります。
-(※現状どちらにするかは決めかねてます)
+<del>以前までは専用シャトルバスがあったようなのですが今年は無くなってしまったようです。</del>
+<del>交通手段としては、公共交通機関(バス)か車(レンタカー)のどちらかになります。</del>
+<del>(※現状どちらにするかは決めかねてます)</del>
+
+専用シャトルバスについて韓国語の公式サイトの方に告知されていました。(英語・日本語のサイトは更新されてません。)  
+なので現地に向かうにはシャトルバスが一番良いでしょう。
+
+##### 専用シャトルバス
+
+[7/5 \[お知らせ\]シャトルのご案内と予約申込](http://valleyrockfestival.mnet.com/2012/news.asp?seq=79520)([Google 翻訳](http://translate.google.com/translate?u=http%3A%2F%2Fvalleyrockfestival.mnet.com%2F2012%2Fnews.asp%3Fseq%3D79520&hl=ja&langpair=auto|ja&tbb=1&ie=UTF-8))
+
+[予約フォームをダウンロード](http://valleyrockfestival.mnet.com/2012/file_down5.asp)し入力したものをメールで添付して申込みとなるようです。
+メール予約から3日以内に指定口座に料金を振り込む必要があります。料金は往復 22,000ウォン(約1,540円)です。 (振込方法については、あとで書く)
 
 ##### 公共交通機関(バス)
 
@@ -133,7 +152,8 @@ FUJI ROCK が[苗場スキー場](http://www.princehotels.co.jp/ski/naeba/)で�
 - おそらく朝までやってるので、徹夜でフェスに参加する
 - キャンプする
     - キャンピングチケット付を購入することでキャンプができます
-    - ただキャンプ設備を持って行けないので非現実的かと(韓国の知り合いと一緒にならアリ)
+    - <del>ただキャンプ設備を持って行けないので非現実的かと(韓国の知り合いと一緒にならアリ)</del>
+    - キャンプ道具一式のレンタルとオプションでテントの設営までできるそうです
 - [JISAN FOREST RESORT](http://www.jisanresort.co.kr/jpn/condo01_01.html) で宿泊
     - 問合せたがキャンセル待ちとのこと
 - [YANGJI PINE RESORT](http://www.pineresort.com/yangji_eng/index.html) で宿泊
