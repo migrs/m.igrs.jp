@@ -7,6 +7,14 @@ categories: festival korea oversea
 ---
 
 #### 更新情報
+
+##### 7/20 更新
+
+前回情報いただいた現地在住の[ゆるゆるはんぐく](http://orshig.blog101.fc2.com/)さんのページにてさらに詳しい情報が紹介されていますので掲載させていただきます。
+
+- [Jisan valley rock festivalの手引き1](http://orshig.blog101.fc2.com/blog-entry-89.html)
+- [Jisan valley rock festivalの手引き2](http://orshig.blog101.fc2.com/blog-entry-90.html)
+
 ##### 7/10 更新
 
 専用シャトルバスがあるようなのでアクセス方法について更新しました。
@@ -142,7 +150,7 @@ FUJI ROCK が[苗場スキー場](http://www.princehotels.co.jp/ski/naeba/)で�
 
 ### 宿の確保
 
-こちらも適当に。半分観光目的なので便利な[明洞](http://www.seoulnavi.com/area/detail.php?area_id=3)周辺に宿泊予定です。  
+こちらも適当に。半分観光目的なので<del>便利な[明洞](http://www.seoulnavi.com/area/detail.php?area_id=3)周辺</del>(明洞周辺はちょっとお高めだったので[麻浦エリア](http://www.seoulnavi.com/matome/190078)にしました)に宿泊予定です。  
 パックツアーを利用し航空券と合わせて手配するのも良いでしょう。
 
 #### 会場周辺宿泊情報
