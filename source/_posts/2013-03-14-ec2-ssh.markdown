@@ -1,0 +1,139 @@
+---
+layout: post
+title: "Amazon EC2 で SSH するなら ec2-ssh が便利"
+date: 2013-03-14 09:00
+comments: true
+categories: aws ec2
+---
+
+AWSを本格的に使い始めて約3ヶ月になる新参者です。
+便利過ぎて今までの時間を返して欲しいくらいなのですが過ぎたものは仕方ないので前に進みましょう。
+
+{% img center http://f.cl.ly/items/0A1P0K2j1S2G2N033n3D/ec2-ssh.png 464 207 ec2-ssh %}
+
+## EC2 への SSH 接続
+Amazon EC2 上のインスタンスにSSH接続するベーシックな方法は
+
+``` sh
+ssh -i /path/to/pk.pem ec2-user@ec2-xxx-xxx-xxx-xxx.compute-1.amazonaws.com
+```
+
+ですが、これでは何のサーバに接続しているのかさっぱり分からないのでこのまま運用している人はまずいないでしょう。
+(AWS Management Console から毎回コピペでがんばっている人はいそう)
+
+### ~/.ssh/config
+
+おそらく多くの人は `~/.ssh/config` の設定にそれぞれ工夫を凝らしているのかと思われますが、
+インスタンス数が増えてくると `~/.ssh/config` の更新も煩わしくなります。
+また Auto Scaling 等のダイナミックな運用になるととても追いつきません。
+
+## 既存サポートツール
+<!-- more -->
+
+### ec2ssh
+その煩わしさを解消するツールとして [ec2ssh](https://github.com/mirakui/ec2ssh) という
+`~/.ssh/config` の更新を半自動化してくれるものがあります。
+(see. [Amazon EC2インスタンスに簡単にSSHできるようになるツールec2sshを公開しました](http://blog.mirakui.com/entry/20101205/1291551625))
+
+ただこれもコマンド一発とはいえ更新作業が必要になり、私にはこれも煩わしく感じました。
+更新を忘れると期待と異なるサーバにアクセスしてしまう可能性もあります。
+
+### ec2-ssh
+そこで登場するのが [ec2-ssh](https://github.com/Instagram/ec2-ssh) です。(が、まだ本題ではありません！)
+
+これは [Instagram](http://instagram.com) エンジニアが作ったツールで
+`~/.ssh/config` の編集無しにダイナミックに解決するタイプになります。
+(see. [Simplifying EC2 SSH Connections](http://instagram-engineering.tumblr.com/post/11399488246/simplifying-ec2-ssh-connections))
+
+私の趣味的にはこちらの方がマッチしていたので2,3日使ってみたのですが、以下の点で不満がありました。
+
+#### 不満点
+- ssh のオプションと互換性がない
+- ユーザ名を省略した時に `~/.ssh/config` の `User` 設定が有効にならない
+- Python が必要
+
+別に Python が嫌なわけではなくてシェルスクリプトで十分に書けるものなのにわざわざ
+依存関係を増やしたくないというだけです。
+
+## (やっと本題) 作ってみた
+というわけで、仕様・実装ともにもっとシンプルにした yet another ec2-ssh を作ってみました。
+
+### 特徴
+- `~/.ssh/config` の更新不要
+- ssh の単なるラッパーなので ssh と全く同じように利用可能
+  - ホスト名の部分を解決して置換しているだけ
+- Pure シェルスクリプト No Requirements
+  - ただしWindowsは考慮してません。Cygwin とかなら多分動く。
+- 同じ名前が付いたインスタンスへの接続にも対応
+
+### インストール
+
+#### ec2-api-tools
+
+まず前提として [ec2-api-tools](http://aws.amazon.com/developertools/351) が動く
+環境になっていることが求められますが AWS 使っている人であれば設定済みでしょう。
+
+利用するコマンドは `ec2-describe-instances` のみです。
+
+Mac なら、
+```
+brew install ec2-api-tools
+```
+で OK。
+
+環境変数で以下を適切に設定すれば動くはずです。
+
+- `AWS_ACCESS_KEY`
+- `AWS_SECRET_KEY`
+- `EC2_HOME`
+- `EC2_URL`
+- `EC2_REGION`
+
+#### ec2-ssh
+
+gist に置きました。[ec2-ssh](https://gist.github.com/migrs/5157665)
+
+まだパッケージングしてないけどシェルスクリプト1つなので以下のような手順で。
+```
+wget https://gist.github.com/migrs/5157665/raw/736e5940279ba92040400d21071b0cf6a392ce5d/ec2-ssh -P /path/to/bin/
+chmod +x /path/to/bin/ec2-ssh
+```
+
+### 利用方法
+
+web1 という名前がついたサーバにSSH接続
+```
+ec2-ssh web1
+```
+
+ユーザ名を指定
+```
+ec2-ssh jonny@web1
+```
+
+同名インスタンスへの接続。上から3番目(作成順)。
+```
+ec2-ssh web#3
+```
+
+ポートフォワーディング
+```
+ec2-ssh -L 8080:127.0.0.1:80 web1
+```
+
+コマンド直接実行
+```
+ec2-ssh web1 ls -la
+ec2-ssh web1 tail -f /var/log/nginx/access.log
+ec2-ssh web1 vmstat 1
+ec2-ssh web1 -t top
+ec2-ssh web1 -t sudo service nginx restart
+```
+
+いい感じですね。
+
+## 続き
+新参なので知らないだけなのかもしれません。
+もっと良い何かがあったら是非教えてください。
+
+この記事には続きがあります。もっと便利な何かを紹介します。
