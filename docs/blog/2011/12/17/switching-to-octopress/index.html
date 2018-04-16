@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>m.igrs.jp - Dust In The Plain Text</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css" />
+    <link href="https://fonts.googleapis.com/earlyaccess/mplus1p.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+
+</head>
+<body class="home-template">
+
+    <header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="/">Home</a>
+        <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">switching to octopress</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2011-12-17">17 Dec 2011</time>
+                
+                    on octopress and jekyll
+                
+            </section>
+        </header>
+
+<!--         <header class="post-header">
+            <a id="blog-logo" href="http://localhost:4000">
+                
+                    <span class="blog-title"></span>
+                
+            </a>
+        </header> -->
+
+        <!-- <span class="post-meta">
+            <time datetime="2011-12-17">17 Dec 2011</time>
+            
+                on octopress and jekyll
+            
+        </span> -->
+
+        <!-- <h1 class="post-title">switching to octopress</h1> -->
+
+        <section class="post-content">
+            <p>しばらくの間 <a href="http://gyazo.com/085cca9f560924d7357df4cf75743164">github パクリデザイン</a>でしたが
+<a href="http://gyazo.com/5a49da61cbd3f87582562f5739f9b9f4">レイアウト崩れて</a>きてしまった(リソース直接参照してました。すいません…)
+ので変更することにしました。</p>
+
+<p>ということで今回採用したのが <a href="http://octopress.org">octopress</a> というブログエンジンです。</p>
+
+<h2 id="octopress-とは">octopress とは</h2>
+<p><img src="http://gyazo.com/b4b39d29e0f26e05cf211deab638554f.png" width="629" height="196" alt="octopress" />
+<a href="http://octopress.org/">http://octopress.org/</a></p>
+
+<p>簡単に言えば <a href="http://jekyllrb.com/">jekyll</a> にデザイン載せて便利にしたようなブログエンジンです。<br />
+jekyll 自体に手を加えているわけではなく、jekyll を利用したフレームワークといった感じ。</p>
+
+<!--more-->
+
+<h3 id="特徴">特徴</h3>
+<ul>
+  <li>HTML5 / CSS3 でデザインもイケてるデフォルトテンプレート</li>
+  <li>スマートフォン対応 (<a href="http://stuffandnonsense.co.uk/projects/320andup/">320 and up</a> 採用)</li>
+  <li>外部サイト連携 (<a href="http://twitter.com/">Twitter</a>, <a href="http://plus.google.com/">Google Plus</a>, <a href="http://disqus.com/">Disqus</a>, <a href="http://pinboard.in/">Pinboard</a>, <a href="http://delicious.com/">Delicious</a>, <a href="http://www.google.com/analytics/">Google Analytics</a>)</li>
+  <li><a href="http:/pages.github.com/">Github pages</a> や任意のサーバへの簡単なデプロイの提供</li>
+  <li><a href="http://pow.cx/">Pow</a> / <a href="http://rack.rubyforge.org/">Rack</a> 対応</li>
+  <li><a href="http://compass-style.org/">Compass</a> / <a href="http://sass-lang.com/">Sass</a> を利用したテーマ</li>
+  <li><a href="http://ethanschoonover.com/solarized">Solarized</a> によるキレイなシンタックスハイライト</li>
+</ul>
+
+<p>jekyll の思想や仕組みは好きだが、実際それなりのデザインにするのは難しいと感じていた私のような(なのでパクった)人に octopress は良いと思う。<br />
+実際、移行もサクっとできた。</p>
+
+<p>WordPress / Movable Type 等他ブログからの移行については jekyll 自体が対応している。See, <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">Blog Migrations</a></p>
+
+<h2 id="get-start">Get Start</h2>
+<p>セットアップに関しては <a href="http://octopress.org/docs/setup/">Octopress Setup</a> にあるとおりでハマリ所もないので省略。
+<strong>Ruby 1.9.2 必須</strong> なのでそこだけ注意。
+ちなみに私は <a href="https://github.com/sstephenson/rbenv">rbenv</a> を利用してます。</p>
+
+<h3 id="ローカルプレビュー">ローカルプレビュー</h3>
+<p>上記セットアップさえすればすぐデザインを確認できます。</p>
+
+<p>ローカル環境で表示を確認したい場合は、</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rake preview
+</code></pre></div></div>
+
+<p>でサーバが立ち上がるので <a href="http://localhost:4000/">http://localhost:4000/</a> で確認できます。
+jekyllの場合の <code class="highlighter-rouge">jekyll --server</code> と同じですね。</p>
+
+<p>octopress は <a href="http://pow.cx/">Pow</a> (というか <a href="http://rack.rubyforge.org/">Rack</a>)にも対応しているのでマカーで Pow 使ってる人は <code class="highlighter-rouge">rake preview</code> しなくても <code class="highlighter-rouge">http://[SITENAME].dev</code> で確認できます。</p>
+
+<p>ファイルの変更を自動で反映させるには、</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rake watch
+</code></pre></div></div>
+
+<p>します。 <code class="highlighter-rouge">jekyll --auto</code> オプションと同じです。</p>
+
+<h3 id="基本的な設定">基本的な設定</h3>
+<p>jekyll の設定ファイルである <a href="https://github.com/imathis/octopress/blob/master/_config.yml">_config.yml</a> を編集します。<br />
+特にこだわら無いのであれば、</p>
+
+<ul>
+  <li><a href="https://github.com/imathis/octopress/blob/master/_config.yml#L2">Main Configs</a></li>
+  <li><a href="https://github.com/imathis/octopress/blob/master/_config.yml#L57">3rd Party Settings</a></li>
+</ul>
+
+<p>あたりをちょろっと変更するくらいで大丈夫です。<br />
+設定の変更は <code class="highlighter-rouge">rake watch</code> では反映されないようなので必要に応じて再実行しましょう。</p>
+
+<h3 id="記事の投稿">記事の投稿</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rake new_post["switching to octopress"]
+</code></pre></div></div>
+
+<p>すると<code class="highlighter-rouge">source/_posts/2011-12-17-switching-to-octopress.markdown</code> が生成されるのでこれを編集します。
+デフォルトは markdown ですが <a href="https://github.com/imathis/octopress/blob/master/Rakefile">Rakefile</a> で設定変更できます。</p>
+
+<p>ちなみにこの記事のソースは<a href="https://github.com/migrs/m.igrs.jp/blob/master/source/_posts/2011-12-17-switching-to-octopress.markdown">こちら</a></p>
+
+<h3 id="デプロイ">デプロイ</h3>
+<p>自分のサーバ等にデプロイする場合は <a href="https://github.com/imathis/octopress/blob/master/Rakefile">Rakefile</a> の <code class="highlighter-rouge">ssh_user</code>, <code class="highlighter-rouge">document_root</code> あたりを変更します。</p>
+
+<p>Github pages を利用する場合は、</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rake setup_github_pages
+</code></pre></div></div>
+
+<p>することで <code class="highlighter-rouge">Rakefile</code> や <code class="highlighter-rouge">_config.yml</code> の設定部分が書き変わるので直接変更する必要はありません。</p>
+
+<p>そして、</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rake deploy
+</code></pre></div></div>
+
+<p>することで本番環境にページが反映されます。</p>
+
+<strike>ただ Github pages デプロイ機能は毎回リポジトリ削除してから新規作成するようなのでコミット履歴が残らないのがちょっと残念。</strike>
+<p>そんなことなかった。</p>
+
+<h2 id="感想">感想</h2>
+<p>デフォルトでここまでデザインできているのはうれしいね！<br />
+他にもいろいろ紹介したい機能等あるけど今回はとりあえずここまで。</p>
+
+<h2 id="参考">参考</h2>
+<h3 id="rake-タスク一覧">rake タスク一覧</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rake clean                 # Clean out caches: .pygments-cache, .gist-cache, .sass-cache
+rake copydot[source,dest]  # copy dot files for deployment
+rake deploy                # Default deploy task
+rake gen_deploy            # Generate website and deploy
+rake generate              # Generate jekyll site
+rake install[theme]        # Initial setup for Octopress: copies the default theme into the path of Jekyll's ge...
+rake integrate             # Move all stashed posts back into the posts directory, ready for site generation.
+rake isolate[filename]     # Move all other posts than the one currently being worked on to a temporary stash l...
+rake list                  # list tasks
+rake new_page[filename]    # Create a new page in source/(filename)/index.markdown
+rake new_post[title]       # Begin a new post in source/_posts
+rake preview               # preview the site in a web browser
+rake push                  # deploy public directory to github pages
+rake rsync                 # Deploy website via rsync
+rake set_root_dir[dir]     # Update configurations to support publishing to root or sub directory
+rake setup_github_pages    # Set up _deploy folder and deploy branch for Github Pages deployment
+rake update_source[theme]  # Move source to source.old, install source theme updates, replace source/_includes/...
+rake update_style[theme]   # Move sass to sass.old, install sass theme updates, replace sass/custom with sass.o...
+rake watch                 # Watch the site and regenerate when it changes
+</code></pre></div></div>
+
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+            <!-- If we want to display author's name and bio -->
+            
+                <figure class="author-image">
+                    <a class="img" href="/" style="background-image: url(/assets/images/profile.png)">
+                    <span class="hidden">Masato Igarashi's Picture</span></a>
+                </figure>
+                <section class="author">
+                    <!-- Author Name -->
+                    <h4> Masato Igarashi </h4>
+                    <!-- Author Bio -->
+                    <p>
+                        Here goes the author description. You might want to place some links too in here
+                    </p>
+                </section>
+            
+
+            <!-- Share links section -->
+            <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=switching to octopress&amp;url=http://localhost:4000/blog/2011/12/17/switching-to-octopress/"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/blog/2011/12/17/switching-to-octopress/"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:4000/blog/2011/12/17/switching-to-octopress/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+            <!-- Disqus comments -->
+            
+
+        </footer>
+
+    </article>
+
+</main>
+
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <a href="/">m.igrs.jp</a> &copy;
+              2018 &bull; All rights reserved.
+      </section>
+      <section class="poweredby">Made with Jekyll using
+        <a href="http://github.com/rosario/kasper">Kasper theme</a>
+      </section>
+    </footer>
+
+    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-655787-6']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>

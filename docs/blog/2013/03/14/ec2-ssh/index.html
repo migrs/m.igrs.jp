@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>m.igrs.jp - Dust In The Plain Text</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css" />
+    <link href="https://fonts.googleapis.com/earlyaccess/mplus1p.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+
+</head>
+<body class="home-template">
+
+    <header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="/">Home</a>
+        <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Amazon EC2 で SSH するなら ec2-ssh が便利</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2013-03-14">14 Mar 2013</time>
+                
+                    on aws and ec2
+                
+            </section>
+        </header>
+
+<!--         <header class="post-header">
+            <a id="blog-logo" href="http://localhost:4000">
+                
+                    <span class="blog-title"></span>
+                
+            </a>
+        </header> -->
+
+        <!-- <span class="post-meta">
+            <time datetime="2013-03-14">14 Mar 2013</time>
+            
+                on aws and ec2
+            
+        </span> -->
+
+        <!-- <h1 class="post-title">Amazon EC2 で SSH するなら ec2-ssh が便利</h1> -->
+
+        <section class="post-content">
+            <p>AWSを本格的に使い始めて約3ヶ月になる新参者です。
+便利過ぎて今までの時間を返して欲しいくらいなのですが過ぎたものは仕方ないので前に進みましょう。</p>
+
+<p><img class="center" src="http://f.cl.ly/items/0A1P0K2j1S2G2N033n3D/ec2-ssh.png" width="464" height="207" alt="ec2-ssh" /></p>
+
+<h2 id="ec2-への-ssh-接続">EC2 への SSH 接続</h2>
+<p>Amazon EC2 上のインスタンスにSSH接続するベーシックな方法は</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh <span class="nt">-i</span> /path/to/pk.pem ec2-user@ec2-xxx-xxx-xxx-xxx.compute-1.amazonaws.com
+</code></pre></div></div>
+
+<p>ですが、これでは何のサーバに接続しているのかさっぱり分からないのでこのまま運用している人はまずいないでしょう。
+(AWS Management Console から毎回コピペでがんばっている人はいそう)</p>
+
+<h3 id="sshconfig">~/.ssh/config</h3>
+
+<p>おそらく多くの人は <code class="highlighter-rouge">~/.ssh/config</code> の設定にそれぞれ工夫を凝らしているのかと思われますが、
+インスタンス数が増えてくると <code class="highlighter-rouge">~/.ssh/config</code> の更新も煩わしくなります。
+また Auto Scaling 等のダイナミックな運用になるととても追いつきません。</p>
+
+<h2 id="既存サポートツール">既存サポートツール</h2>
+<!-- more -->
+
+<h3 id="ec2ssh">ec2ssh</h3>
+<p>その煩わしさを解消するツールとして <a href="https://github.com/mirakui/ec2ssh">ec2ssh</a> という
+<code class="highlighter-rouge">~/.ssh/config</code> の更新を半自動化してくれるものがあります。
+(see. <a href="http://blog.mirakui.com/entry/20101205/1291551625">Amazon EC2インスタンスに簡単にSSHできるようになるツールec2sshを公開しました</a>)</p>
+
+<p>ただこれもコマンド一発とはいえ更新作業が必要になり、私にはこれも煩わしく感じました。
+更新を忘れると期待と異なるサーバにアクセスしてしまう可能性もあります。</p>
+
+<h3 id="ec2-ssh">ec2-ssh</h3>
+<p>そこで登場するのが <a href="https://github.com/Instagram/ec2-ssh">ec2-ssh</a> です。(が、まだ本題ではありません！)</p>
+
+<p>これは <a href="http://instagram.com">Instagram</a> エンジニアが作ったツールで
+<code class="highlighter-rouge">~/.ssh/config</code> の編集無しにダイナミックに解決するタイプになります。
+(see. <a href="http://instagram-engineering.tumblr.com/post/11399488246/simplifying-ec2-ssh-connections">Simplifying EC2 SSH Connections</a>)</p>
+
+<p>私の趣味的にはこちらの方がマッチしていたので2,3日使ってみたのですが、以下の点で不満がありました。</p>
+
+<h4 id="不満点">不満点</h4>
+<ul>
+  <li>ssh のオプションと互換性がない</li>
+  <li>ユーザ名を省略した時に <code class="highlighter-rouge">~/.ssh/config</code> の <code class="highlighter-rouge">User</code> 設定が有効にならない</li>
+  <li>Python が必要</li>
+</ul>
+
+<p>別に Python が嫌なわけではなくてシェルスクリプトで十分に書けるものなのにわざわざ
+依存関係を増やしたくないというだけです。</p>
+
+<h2 id="やっと本題-作ってみた">(やっと本題) 作ってみた</h2>
+<p>というわけで、仕様・実装ともにもっとシンプルにした yet another ec2-ssh を作ってみました。</p>
+
+<h3 id="特徴">特徴</h3>
+<ul>
+  <li><code class="highlighter-rouge">~/.ssh/config</code> の更新不要</li>
+  <li>ssh の単なるラッパーなので ssh と全く同じように利用可能
+    <ul>
+      <li>ホスト名の部分を解決して置換しているだけ</li>
+    </ul>
+  </li>
+  <li>Pure シェルスクリプト No Requirements
+    <ul>
+      <li>ただしWindowsは考慮してません。Cygwin とかなら多分動く。</li>
+    </ul>
+  </li>
+  <li>同じ名前が付いたインスタンスへの接続にも対応</li>
+</ul>
+
+<h3 id="インストール">インストール</h3>
+
+<h4 id="ec2-api-tools">ec2-api-tools</h4>
+
+<p>まず前提として <a href="http://aws.amazon.com/developertools/351">ec2-api-tools</a> が動く
+環境になっていることが求められますが AWS 使っている人であれば設定済みでしょう。</p>
+
+<p>利用するコマンドは <code class="highlighter-rouge">ec2-describe-instances</code> のみです。</p>
+
+<p>Mac なら、</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install ec2-api-tools
+</code></pre></div></div>
+<p>で OK。</p>
+
+<p>環境変数で以下を適切に設定すれば動くはずです。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">AWS_ACCESS_KEY</code></li>
+  <li><code class="highlighter-rouge">AWS_SECRET_KEY</code></li>
+  <li><code class="highlighter-rouge">EC2_HOME</code></li>
+  <li><code class="highlighter-rouge">EC2_URL</code></li>
+  <li><code class="highlighter-rouge">EC2_REGION</code></li>
+</ul>
+
+<h4 id="ec2-ssh-1">ec2-ssh</h4>
+
+<p>gist に置きました。<a href="https://gist.github.com/migrs/5157665">ec2-ssh</a></p>
+
+<p>まだパッケージングしてないけどシェルスクリプト1つなので以下のような手順で。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://gist.github.com/migrs/5157665/raw/736e5940279ba92040400d21071b0cf6a392ce5d/ec2-ssh -P /path/to/bin/
+chmod +x /path/to/bin/ec2-ssh
+</code></pre></div></div>
+
+<h3 id="利用方法">利用方法</h3>
+
+<p>web1 という名前がついたサーバにSSH接続</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ec2-ssh web1
+</code></pre></div></div>
+
+<p>ユーザ名を指定</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ec2-ssh jonny@web1
+</code></pre></div></div>
+
+<p>同名インスタンスへの接続。上から3番目(作成順)。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ec2-ssh web#3
+</code></pre></div></div>
+
+<p>ポートフォワーディング</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ec2-ssh -L 8080:127.0.0.1:80 web1
+</code></pre></div></div>
+
+<p>コマンド直接実行</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ec2-ssh web1 ls -la
+ec2-ssh web1 tail -f /var/log/nginx/access.log
+ec2-ssh web1 vmstat 1
+ec2-ssh web1 -t top
+ec2-ssh web1 -t sudo service nginx restart
+</code></pre></div></div>
+
+<p>いい感じですね。</p>
+
+<h2 id="続き">続き</h2>
+<p>新参なので知らないだけなのかもしれません。
+もっと良い何かがあったら是非教えてください。</p>
+
+<p>この記事には続きがあります。もっと便利な何かを紹介します。</p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+            <!-- If we want to display author's name and bio -->
+            
+                <figure class="author-image">
+                    <a class="img" href="/" style="background-image: url(/assets/images/profile.png)">
+                    <span class="hidden">Masato Igarashi's Picture</span></a>
+                </figure>
+                <section class="author">
+                    <!-- Author Name -->
+                    <h4> Masato Igarashi </h4>
+                    <!-- Author Bio -->
+                    <p>
+                        Here goes the author description. You might want to place some links too in here
+                    </p>
+                </section>
+            
+
+            <!-- Share links section -->
+            <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=Amazon EC2 で SSH するなら ec2-ssh が便利&amp;url=http://localhost:4000/blog/2013/03/14/ec2-ssh/"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/blog/2013/03/14/ec2-ssh/"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:4000/blog/2013/03/14/ec2-ssh/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+            <!-- Disqus comments -->
+            
+
+        </footer>
+
+    </article>
+
+</main>
+
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <a href="/">m.igrs.jp</a> &copy;
+              2018 &bull; All rights reserved.
+      </section>
+      <section class="poweredby">Made with Jekyll using
+        <a href="http://github.com/rosario/kasper">Kasper theme</a>
+      </section>
+    </footer>
+
+    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-655787-6']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>

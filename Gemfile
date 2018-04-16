@@ -1,19 +1,17 @@
-source "http://rubygems.org"
+source 'https://rubygems.org'
 
-group :development do
-  gem 'rake', '~> 0.9.2'
-  gem 'rack', '~> 1.4.1'
-  gem 'jekyll', '~> 0.11.2'
-  gem 'rdiscount', '~> 1.6.8'
-  gem 'pygments.rb', '~> 0.2.12'
-  gem 'RedCloth', '~> 4.2.9'
-  gem 'haml', '~> 3.1.6'
-  gem 'compass', '~> 0.12.1'
-  gem 'rubypants', '~> 0.2.0'
-  gem 'rb-fsevent', '~> 0.9'
-  gem 'stringex', '~> 1.4.0'
-  gem 'liquid', '~> 2.3.0'
+gem 'jekyll'
+gem 'jekyll-paginate'
+gem 'pygments.rb'
+
+group :jekyll_plugins do
+  gem 'jekyll-feed', "~> 0.6"
+  gem 'jekyll-compose'
+  gem 'octopress-image-tag'
 end
 
-#gem 'sinatra', '~> 1.3.2'
-gem 'rack-server-pages'
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Performance-booster for watching directories on Windows
+gem "wdm", "~> 0.1.0" if Gem.win_platform?
