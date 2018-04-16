@@ -23,6 +23,8 @@ author: 'Masato Igarashi'
 permalink: /blog/:year/:month/:day/:title/
 google_analytics: 'UA-655787-6'
 
+destination: ./docs
+
 exclude:
   - Gemfile
   - Gemfile.lock
