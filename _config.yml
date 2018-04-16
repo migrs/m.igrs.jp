@@ -17,6 +17,7 @@ paginate: 10
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-gist
 
 # Details for the RSS feed generator
 author: 'Masato Igarashi'
