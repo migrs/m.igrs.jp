@@ -1,0 +1,32 @@
+title: m.igrs.jp
+email: m@igrs.jp
+#description: Don't eat the yellow snow
+description: >-
+  Dust In The Plain Text
+
+baseurl: "/"
+url: "http://m.igrs.jp"
+twitter_username: migrs
+github_username:  migrs
+
+markdown: kramdown
+#highlighter: pygments
+logo: false
+paginate: 10
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+
+# Details for the RSS feed generator
+author: 'Masato Igarashi'
+permalink: /blog/:year/:month/:day/:title/
+google_analytics: 'UA-655787-6'
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - .bundle
+  - LICENSE.txt
+  - README.md
