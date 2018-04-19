@@ -33,4 +33,4 @@ Masato Igarashi
 
 ## Educational Background
 
-- Chiba University (class of 1997, science department, mathematics course)
+- Chiba University (class of 1993, science department, mathematics course)

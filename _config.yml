@@ -22,6 +22,7 @@ plugins:
 # Details for the RSS feed generator
 author: 'Masato Igarashi'
 permalink: /blog/:year/:month/:day/:title/
+paginate_path: /blog/page/:num/
 google_analytics: 'UA-655787-6'
 
 feed:
@@ -33,4 +34,3 @@ exclude:
   - node_modules
   - .bundle
   - LICENSE.txt
-  - README.md
