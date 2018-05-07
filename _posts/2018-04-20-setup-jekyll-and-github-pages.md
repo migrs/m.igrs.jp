@@ -1,6 +1,8 @@
 ---
 layout: post
+date: 2018-04-20 12:00:00 +0900
 title: Setup Jekyll and GitHub Pages Again
+categories: jekyll
 ---
 
 これまで[さくらのVPS](https://vps.sakura.ad.jp/)で運用していたのですが、更新忘れて契約が切れいつの間にかサーバ毎消えてしまっていました。

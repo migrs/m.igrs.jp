@@ -6,7 +6,7 @@ comments: true
 categories: elixir ruby translate
 ---
 
-{% img center http://f.cl.ly/items/3f2z0j113p1W2J3P3E0t/elixir-logo.png 227 95 elixir %}
+{% img center https://i.imgur.com/UXvaUbF.png 227 95 elixir %}
 
 Elixir の読み方は多分「エリクサー」。RPGゲームのアイテムにありそうな名前だ。
 個人的には「エリクシール」と読みたいところだが多分「エリクサー」で良いだろう。
