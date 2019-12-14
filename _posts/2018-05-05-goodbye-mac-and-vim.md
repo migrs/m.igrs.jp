@@ -5,7 +5,7 @@ title: Goodbye Mac and Vim
 categories: mac vim ubuntu vscode
 ---
 
-趣味的にいろんな OS やエディタに手を出しつつも、わりと長い間 Mac と Vim をメインの開発環境としてきたのだが、ここ最近その牙城が崩れ今ではすっかり [Ubuntu](https://www.ubuntu.com/) と [VSCode](https://code.visualstudio.com/) 中心な環境にシフトした。
+趣味的にいろんな OS やエディターに手を出しつつも、わりと長い間 Mac と Vim をメインの開発環境としてきたのだが、ここ最近その牙城が崩れ今ではすっかり [Ubuntu](https://www.ubuntu.com/) と [VSCode](https://code.visualstudio.com/) 中心な環境にシフトした。
 
 わりと長い間というのは十数年なので僕のエンジニア人生の大部分を占めることになり、節目感じたので残しておく。
 
@@ -33,6 +33,6 @@ GUI としては、Win / Mac には劣るものの、一昔前に比べて様々
 
 僕が今メインで利用しているのは [Lenovo ideapad 720S (13.3インチ)](https://www3.lenovo.com/jp/ja/notebooks-new-splitter/ideapad/ideapad-700-series/Ideapad-720S-13-Intel/p/88IP70S0893) だが 10万円切る価格で十分満足いくボディとスペックである。(できればメモリ16GB欲しいところではあるが)
 
-### エディタについて
+### エディターについて
 
-常用エディタを GVim から Visual Studio Code にスイッチした件も書くつもりだったが長くなってきたので別に書くことにする。
+常用エディターを GVim から Visual Studio Code にスイッチした件も書くつもりだったが長くなってきたので別に書くことにする。
